@@ -10,8 +10,6 @@ __pycache__/
 .idea/
 
 # dataset
-training_dataset
-testing_dataset
 training_dataset/*
 testing_dataset/*
 !testing_dataset/README.md 
