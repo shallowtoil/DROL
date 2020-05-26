@@ -1,0 +1,51 @@
+META_ARC: "siamrpn_r50_l234_dwxcorr_votlt"
+
+BACKBONE:
+    TYPE: "resnet50"
+    KWARGS:
+        used_layers: [2, 3, 4]
+
+ADJUST:
+    ADJUST: True
+    TYPE: "AdjustAllLayer"
+    LAYER: 2
+    KWARGS:
+        in_channels: [512, 1024, 2048]
+        out_channels: [128, 256, 512] #[128, 256, 512]
+
+RPN:
+    TYPE: 'MultiRPN'
+    KWARGS:
+        anchor_num: 5
+        in_channels: [128, 256, 512] #[128, 256, 512]
+        weighted: True
+
+MASK:
+    MASK: False
+
+ANCHOR:
+    STRIDE: 8
+    RATIOS: [0.33, 0.5, 1, 2, 3]
+    SCALES: [8]
+    ANCHOR_NUM: 5
+
+TRACK:
+    TYPE: 'SiamRPNLTTracker'
+    PENALTY_K: 0.05
+    WINDOW_INFLUENCE: 0.28
+    LR: 0.22
+    EXEMPLAR_SIZE: 127
+    INSTANCE_SIZE: 255
+    BASE_SIZE: 8
+    CONTEXT_AMOUNT: 0.5
+
+    # classifier & updater
+    USE_CLASSIFIER: True
+    TEMPLATE_UPDATE: True
+    SEED: 0
+    COEE_CLASS: 0.6
+    USE_ATTENTION_LAYER: False
+    CHANNEL_ATTENTION: True
+    SPATIAL_ATTENTION: 'pool' # ['none', 'pool', 'residual', 'gaussian']
+    TARGET_NOT_FOUND_THRESHOLD: 0.2
+
