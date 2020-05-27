@@ -8,7 +8,7 @@ BACKBONE:
 ADJUST:
     ADJUST: True
     TYPE: "AdjustAllLayer"
-    LAYER: 2
+    LAYER: 1
     KWARGS:
         in_channels: [512, 1024, 2048]
         out_channels: [128, 256, 512] #[128, 256, 512]
@@ -43,7 +43,7 @@ TRACK:
     USE_CLASSIFIER: True
     TEMPLATE_UPDATE: True
     SEED: 0
-    COEE_CLASS: 0.6
+    COEE_CLASS: 0.8
     USE_ATTENTION_LAYER: False
     CHANNEL_ATTENTION: True
     SPATIAL_ATTENTION: 'pool' # ['none', 'pool', 'residual', 'gaussian']
