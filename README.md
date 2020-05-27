@@ -3,7 +3,7 @@ This is the repo for paper "Discriminative and Robust Online Learning for Siames
 
 ## Introduction
 
-The proposed Discriminative and Robust Online Learning (DROL) module is designed to working with a variety of off-the-shelf siamese trackers. Our method is extensively evaluated over serveral mainstream benchmarks and is believed to induce a consistant performance gain over the given baseline. Such models include but not limited to, as paper evaluated:
+The proposed Discriminative and Robust Online Learning (DROL) module is designed to work with a variety of off-the-shelf siamese trackers. Our method is extensively evaluated over serveral mainstream benchmarks and is believed to induce a consistant performance gain over the given baseline. The model includes but not limited to, as paper evaluated:
 
 - [SiamRPN++](https://arxiv.org/abs/1812.11703) (DROL-RPN)
 - [SiamMask](https://arxiv.org/abs/1812.05050) (DROL-MASK)
@@ -25,7 +25,7 @@ export PYTHONPATH=/path/to/drol:$PYTHONPATH
 ```
 
 ### Download models
-Download models in [PySOT Model Zoo](MODEL_ZOO.md) and put the model.pth in the corresponding  directory in experiments.
+Download models in [PySOT Model Zoo](MODEL_ZOO.md) and put the model.pth to the corresponding directory in experiment.
 
 ### Test tracker
 ```bash
