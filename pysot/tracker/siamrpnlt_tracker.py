@@ -101,7 +101,7 @@ class SiamRPNLTTracker(SiamRPNTracker):
 
         if not self.longterm_state:
             if cfg.TRACK.USE_CLASSIFIER:
-                self.classifier.update(bbox, flag)
+                self.classifier.update(bbox, scale_z, flag)
 
         if best_score < cfg.TRACK.CONFIDENCE_LOW:
             self.longterm_state = True
