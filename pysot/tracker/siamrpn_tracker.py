@@ -163,7 +163,7 @@ class SiamRPNTracker(SiameseTracker):
                 pscore_st = penalty_st * score_st
                 pscore_st = pscore_st.reshape(5, -1) * (1 - cfg.TRACK.COEE_CLASS) + \
                             normalize(confidence) * cfg.TRACK.COEE_CLASS
-                pscore_st = pscore_st.flatten(0)
+                pscore_st = pscore_st.flatten()
 
         pscore = pscore * (1 - cfg.TRACK.WINDOW_INFLUENCE) + \
             self.window * cfg.TRACK.WINDOW_INFLUENCE
